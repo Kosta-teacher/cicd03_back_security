@@ -48,15 +48,13 @@ public class SecurityConfig {
         log.info("SecurityFilterChain filterChain(HttpSecurity http) call.....");
        /////////////////////////////////
         //CORS 설정
-      /*  http.cors((corsCustomizer ->
+        http.cors((corsCustomizer ->
                 corsCustomizer.configurationSource(new CorsConfigurationSource()
                 {
                     @Override
                     public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                         CorsConfiguration configuration = new CorsConfiguration();
-                        //configuration.setAllowedOrigins(Collections.singletonList("http://localhost:5173"));
-                        //configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173", "http://localhost:4173"));
-                        configuration.setAllowedOrigins(Arrays.asList("http://43.203.170.229", "http://43.203.170.229:80"));
+                        configuration.setAllowedOrigins(Arrays.asList("http://52.79.218.215", "http://52.79.218.215:80"));
                         configuration.setAllowedOrigins(Arrays.asList("http://heejung.n-e.kr", "https://heejung.n-e.kr"));
                         configuration.setAllowedMethods(Collections.singletonList("*"));
                         configuration.setAllowCredentials(true);
@@ -67,7 +65,7 @@ public class SecurityConfig {
                         configuration.setExposedHeaders(Collections.singletonList("Authorization"));
                         return configuration;
                     }
-                })));*/
+                })));
         ////////////////////////////////////
         //csrf disable
         http.csrf((auth) -> auth.disable()); //csrf공격을 방어하기 위한 토큰 주고 받는 부분을 비활성화!

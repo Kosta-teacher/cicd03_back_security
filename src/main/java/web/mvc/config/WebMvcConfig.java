@@ -12,14 +12,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 * WebMvcConfigurer 를 이용해서 @CrossOrigin 글로벌 설정
 * */
 @Configuration
-//@EnableWebMvc
+@EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
   @Override
   public void addCorsMappings(CorsRegistry registry) {
      registry.addMapping("/**")
-    // .allowedOrigins("http://localhost:5173","http://localhost:4173")
-     //.allowedOrigins("http://43.200.184.113:5173", "http://43.200.184.113:4173")
-      .allowedOrigins("http://43.203.170.229", "http://43.203.170.229:80")
+      .allowedOrigins("http://52.79.218.215", "http://52.79.218.215:80")
       .allowedOrigins("http://heejung.n-e.kr", "https://heejung.n-e.kr")
      .allowedMethods("OPTIONS","GET","POST","PUT","DELETE");
   }
