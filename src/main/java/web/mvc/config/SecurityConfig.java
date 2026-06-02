@@ -48,7 +48,7 @@ public class SecurityConfig {
         log.info("SecurityFilterChain filterChain(HttpSecurity http) call.....");
        /////////////////////////////////
         //CORS 설정
-        http.cors((corsCustomizer ->
+      /*  http.cors((corsCustomizer ->
                 corsCustomizer.configurationSource(new CorsConfigurationSource()
                 {
                     @Override
@@ -67,7 +67,7 @@ public class SecurityConfig {
                         configuration.setExposedHeaders(Collections.singletonList("Authorization"));
                         return configuration;
                     }
-                })));
+                })));*/
         ////////////////////////////////////
         //csrf disable
         http.csrf((auth) -> auth.disable()); //csrf공격을 방어하기 위한 토큰 주고 받는 부분을 비활성화!
